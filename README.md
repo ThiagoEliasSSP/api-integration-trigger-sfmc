@@ -1,0 +1,1 @@
+# democrata-blackfriday-vtex-mkt
