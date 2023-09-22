@@ -10,13 +10,17 @@ class ContactController {
 
 		const {access_token} = await getToken(config.setup);
 
-		let currentDate = await subtractHours(new Date(), 3);
+		let currentDate = await subtractHours(new Date(), -3);
+
+		console.log('🚀 ~ file: ContactController.js:14 ~ ContactController ~ sentContactIntoSalesforce ~ currentDate subtract:', currentDate);
 
 		const isInsertedIntoJourney = await ContactRepositories.insertContactJourney(config.setup, { email, name, currentDate }, access_token);
 
 		if(!isInsertedIntoJourney) {
 
 			let currentDate = await addHours(new Date(), 3);
+
+			console.log('🚀 ~ file: ContactController.js:22 ~ ContactController ~ sentContactIntoSalesforce ~ currentDate add:', currentDate);
 
 			const isUpsertedIntoDataExtension = await ContactRepositories.upsertContactDataExtension(config.setup, { email, name, currentDate }, access_token);
 
