@@ -2,8 +2,8 @@ POST http://localhost:5001
 Content-type: application/json
 
 {
-  "email": "thiagoe.ssp@gmail.com",
-  "name": "Thiago Elias Pereira"
+  "email": "teste3@teste.com",
+  "name": "Teste3"
 }
 
 ###
