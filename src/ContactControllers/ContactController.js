@@ -1,6 +1,7 @@
 const ContactRepositories = require('../ContactRepositories/ContactRepository');
 const getToken = require('../Helpers/getToken');
 const addHours = require('../Helpers/getCurrentDate');
+const subtractHours = require('../Helpers/getCurrentDate');
 const config = require('../config');
 
 class ContactController {
@@ -9,13 +10,15 @@ class ContactController {
 
 		const {access_token} = await getToken(config.setup);
 
-		const currentDate = await addHours(new Date(), 3);
+		let currentDate = await subtractHours(new Date(), 3);
 
 		const isInsertedIntoJourney = await ContactRepositories.insertContactJourney(config.setup, { email, name, currentDate }, access_token);
 
 		if(!isInsertedIntoJourney) {
-			const isUpsertedIntoDataExtension = await ContactRepositories.upsertContactDataExtension(config.setup, { email, name, currentDate }, access_token);
 
+			let currentDate = await addHours(new Date(), 3);
+
+			const isUpsertedIntoDataExtension = await ContactRepositories.upsertContactDataExtension(config.setup, { email, name, currentDate }, access_token);
 
 			if(!isUpsertedIntoDataExtension) {
 				return response.status(400).json({'error': 'It was not possible to insert the contact in the journey or data extension'});
