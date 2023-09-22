@@ -1,9 +1,17 @@
+POST https://democrata-blackfriday-vtex-mkt-7be98082f092.herokuapp.com/
+Content-type: application/json
+
+{
+  "email": "teste15@teste.com",
+  "name": "Teste15"
+}
+
+###
+
 POST http://localhost:5001
 Content-type: application/json
 
 {
-  "email": "teste3@teste.com",
-  "name": "Teste3"
+  "email": "teste14@teste.com",
+  "name": "Teste14"
 }
-
-###

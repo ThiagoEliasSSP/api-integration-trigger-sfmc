@@ -12,8 +12,6 @@ class ContactController {
 
 		let currentDate = await subtractHours(new Date(), -3);
 
-		console.log('🚀 ~ file: ContactController.js:14 ~ ContactController ~ sentContactIntoSalesforce ~ currentDate subtract:', currentDate);
-
 		const isInsertedIntoJourney = await ContactRepositories.insertContactJourney(config.setup, { email, name, currentDate }, access_token);
 
 		if(!isInsertedIntoJourney) {
