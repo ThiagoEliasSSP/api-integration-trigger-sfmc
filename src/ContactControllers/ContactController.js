@@ -18,8 +18,6 @@ class ContactController {
 
 			let currentDate = await addHours(new Date(), 3);
 
-			console.log('🚀 ~ file: ContactController.js:22 ~ ContactController ~ sentContactIntoSalesforce ~ currentDate add:', currentDate);
-
 			const isUpsertedIntoDataExtension = await ContactRepositories.upsertContactDataExtension(config.setup, { email, name, currentDate }, access_token);
 
 			if(!isUpsertedIntoDataExtension) {
