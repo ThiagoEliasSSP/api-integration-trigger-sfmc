@@ -14,15 +14,11 @@ class ContactController {
 
 		const isInsertedIntoJourney = await ContactRepositories.insertContactJourney(config.setup, { email, name, currentDate }, access_token);
 
-		console.log('🚀 ~ file: ContactController.js:16 ~ ContactController ~ sentContactIntoSalesforce ~ isInsertedIntoJourney:', isInsertedIntoJourney);
-
 		if(!isInsertedIntoJourney) {
 
 			let currentDate = await addHours(new Date(), 3);
 
 			const isUpsertedIntoDataExtension = await ContactRepositories.upsertContactDataExtension(config.setup, { email, name, currentDate }, access_token);
-
-			console.log('🚀 ~ file: ContactController.js:22 ~ ContactController ~ sentContactIntoSalesforce ~ isUpsertedIntoDataExtension:', isUpsertedIntoDataExtension);
 
 			if(!isUpsertedIntoDataExtension) {
 				return response.status(400).json({'error': 'It was not possible to insert the contact in the journey or data extension'});
