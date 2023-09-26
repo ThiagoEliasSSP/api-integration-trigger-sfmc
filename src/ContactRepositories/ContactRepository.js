@@ -21,8 +21,8 @@ class ContactRepository {
 		};
 
 		const response = axios.request(options)
-			.then((response) => response.data)
-			.catch((error) => error.data);
+			.then((response) => response)
+			.catch((error) => error);
 
 		return response;
 	}
@@ -45,8 +45,8 @@ class ContactRepository {
 		};
 
 		const response = axios.request(options)
-			.then((response) => response.data)
-			.catch((error) => error.data);
+			.then((response) => response)
+			.catch((error) => error);
 
 		return response;
 	}
