@@ -1,1 +1,1 @@
-# democrata-blackfriday-vtex-mkt
+# api-integration-vtextrigger-sfmc

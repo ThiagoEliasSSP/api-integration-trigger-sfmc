@@ -1,9 +1,9 @@
-POST https://democrata-blackfriday-vtex-mkt-7be98082f092.herokuapp.com/
+POST
 Content-type: application/json
 
 {
-  "email": "teste15@teste.com",
-  "name": "Teste15"
+  "email": "thiagoe.ssp@gmail.com",
+  "name": "Thiago"
 }
 
 ###
