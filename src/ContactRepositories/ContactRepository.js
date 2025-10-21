@@ -30,7 +30,7 @@ class ContactRepository {
 	upsertContactDataExtension(setup, data, token){
 		const options = {
 			method: 'PUT',
-			url: `https://mc62l6vyyk-8r4gwyvbjxdlwzdgq.rest.marketingcloudapis.com/hub/v1/dataevents/key:${setup.externalKey}/rows/email:${data.email}`,
+			url: `${setup.restBaseURI}hub/v1/dataevents/key:${setup.externalKey}/rows/email:${data.email}`,
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${token}`
